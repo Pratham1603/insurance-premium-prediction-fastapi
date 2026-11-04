@@ -18,7 +18,7 @@ def predict_output(user_input: dict):
     df = pd.DataFrame([user_input])
 
     # Predict the class
-    predicted_class = model.predict(df)[0]
+    predicted_class = model.predict(df)[0] 
 
     # Get probabilities for all classes
     probabilities = model.predict_proba(df)[0]
