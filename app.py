@@ -78,6 +78,16 @@ class UserInput(BaseModel):
             return 2
         else:
             return 3
+        
+# Human readable
+@app.get('/')
+def home():
+    return {"message": "Welcome to the Insurance Premium Prediction API. Use the /predict endpoint to get predictions."}
+
+# Machine readable
+@app.get('/health')
+def health_check():
+    return JSONResponse(status_code=200, content={"status": "healthy"})
 
 # POST endpoint to predict insurance premium category based on user input
 @app.post('/predict')
