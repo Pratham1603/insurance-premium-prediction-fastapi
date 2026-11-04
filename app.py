@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from schema.user_input import UserInput
-from config import tier_1_cities, tier_2_cities
+from config.city_tier import tier_1_cities, tier_2_cities
 from model.predict import predict_output, MODEL_VERSION, model
 
 # pip install fastapi uvicorn scikit-learn==1.5.1 pandas pydantic
@@ -32,6 +32,11 @@ def predict_premium(data: UserInput):
         'occupation': data.occupation
     }
 
-    prediction = predict_output(user_input)
+    try :
+            
+        prediction = predict_output(user_input)
 
-    return JSONResponse(status_code=200, content={'predicted_category': prediction})
+        return JSONResponse(status_code=200, content={'predicted_category': prediction})
+
+    except Exception as e:
+        return JSONResponse(status_code=500, content={'error': str(e)}) 
