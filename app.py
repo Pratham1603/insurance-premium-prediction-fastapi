@@ -11,6 +11,10 @@ import pandas as pd
 with open('model/model.pkl', 'rb') as f:
     model = pickle.load(f)
 
+# model name from mlflow 
+# dummy for now 
+MODEL_VERSION = "1.0.0"
+
 app = FastAPI()
 
 tier_1_cities = ["Mumbai", "Delhi", "Bangalore", "Chennai", "Kolkata", "Hyderabad", "Pune"]
@@ -87,7 +91,7 @@ def home():
 # Machine readable
 @app.get('/health')
 def health_check():
-    return JSONResponse(status_code=200, content={"status": "healthy"})
+    return {"status": "healthy", "version": MODEL_VERSION, "model_loaded": model is not None}
 
 # POST endpoint to predict insurance premium category based on user input
 @app.post('/predict')
