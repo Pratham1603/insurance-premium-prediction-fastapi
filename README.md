@@ -2,6 +2,15 @@
 
 A production-ready machine learning web service built with **FastAPI** to predict medical insurance costs based on individual health parameters and demographics.
 
+---
+
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/48459ca7-84ce-407c-aa51-2febb3a2ef28" width="80%" controls>
+  </video>
+</p>
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Key Features](#key-features)
