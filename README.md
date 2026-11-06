@@ -4,10 +4,7 @@ A production-ready machine learning web service built with **FastAPI** to predic
 
 ---
 
-<p align="center">
-  <video src="https://github.com/user-attachments/assets/48459ca7-84ce-407c-aa51-2febb3a2ef28" width="80%" controls>
-  </video>
-</p>
+https://github.com/user-attachments/assets/48459ca7-84ce-407c-aa51-2febb3a2ef28
 
 ---
 
